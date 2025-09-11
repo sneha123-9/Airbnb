@@ -347,6 +347,33 @@ const sampleListings = [
     location: "Costa Rica",
     country: "Costa Rica",
   },
-];
+  {
+  title: "Cozy Mountain Cabin",
+  description: "A peaceful wooden cabin surrounded by pine trees with a stunning mountain view.",
+  image: {
+    filename: "listing_image",
+    url: "https://images.unsplash.com/photo-1618140052121-39fc6db33972?ixlib=rb-4.0.3&ix",
+  },
+  price: 1500,
+  location: "Manali",
+  country: "India",
+},
+{
+  title: "Luxury Glass Igloo",
+  description: "Sleep under the Northern Lights in this stunning glass igloo with panoramic Arctic views.",
+  image: {
+    filename: "listing_image",
+    url: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+  },
+  price: 5000,
+  location: "Lapland",
+  country: "Finland",
+  
+}
+
+  ];
+
+
+
 
 module.exports = { data: sampleListings };

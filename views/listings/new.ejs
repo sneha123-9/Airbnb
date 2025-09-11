@@ -1,27 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crete new listing</title>
-</head>
-<body>
-    <h3>Create new listing</h3>
-    <form  method="POST"  action="/listings">
-    <input type="text" placeholder="title" name="listing[title]"/>
-    <br/><br/>
-    <textarea name="listing[description]" placeholder="description" type="text"></textarea>
-        <br/><br/>
-    <input  placeholder="image url " name="listing[image]" type="String"/>
-        <br/><br/>
-    <input  placeholder="price" name="listing[price]" type="number"/>
-        <br/><br/>
-        <input type="text" placeholder="location" type="String">
-        <br/><br/>
-    <input type="text" placeholder="country" name="listing[country]"/>
-    <br/><br/>
-    <button> Add</button>
-     </form>
+<% layout("layouts/boilerplate.ejs") %>
 
+<body>
+    <div class="row">
+        <div class="col-8 offset-2">
+            <br/><br/>
+            <h3>Create new listing</h3>
+
+            <form method="POST" action="/listings"  novalidate  class="needs-validation" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" name="listing[title]" class="form-control"  />
+                    <div class="invalid-feedback">Title is required.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea name="listing[description]" class="form-control" ></textarea>
+                    <div class="invalid-feedback">Description is required.</div>
+                </div>
+               
+                <div class="mb-3" >
+                          <label for="image" class="form-label">Upload Listing Image</label>
+                         <input name="listing[image]" type="file" class="form-control" required />
+                      <div class="invalid-feedback">Image URL is required.</div>
+                        </div>
+
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>   
+                    <input placeholder="1200" name="listing[price]" class="form-control" required />
+                    <div class="invalid-feedback">price is required.</div>
+                </div>
+
+                <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label for="location" class="form-label">Location</label>   
+                        
+                        <input type="text" placeholder="Goa, Rajasthan" name="listing[location]" class="form-control" required />
+                        <div class="invalid-feedback">location is required.</div>
+                    </div>
+
+                    <div class="mb-3 col-md-8">
+                        <label for="country" class="form-label">Country</label>   
+                        <input type="text" placeholder="India" name="listing[country]" class="form-control" required />
+                        <div class="invalid-feedback">country is required.</div>
+                    </div>
+                </div>
+
+                <br/><br/>
+                <button class="btn btn-dark add-btn">Add</button>
+                <br/><br/>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
