@@ -6,7 +6,7 @@ module.exports.index = async (req, res) => {
 module.exports.renderNewForm = (req, res) => {
     res.render("listings/new.ejs");
 };
-module.exports.showListing = async (req, res) => {
+module.exports.showListing = async (req, res) => { 
     let { id } = req.params;
     let listing = await Listing.findById(id).populate({ path: "reviews", populate: { path: "author" } }).populate("Owner");
     if (!listing) {
