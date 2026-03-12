@@ -91,8 +91,9 @@ app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
 
 // Root route
+// Root route
 app.get("/", (req, res) => {
-  res.send("Root is working ✅");
+res.redirect("/listings");
 });
 
 // 404 handler
